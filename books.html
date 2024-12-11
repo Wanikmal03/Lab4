@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="books.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Book Collection</h1>
+        <!-- Table structure to display the book details -->
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Book 1</th>
+                    <th>Book 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td id="book1Title"></td>
+                    <td id="book2Title"></td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td id="book1Author"></td>
+                    <td id="book2Author"></td>
+                </tr>
+                <tr>
+                    <td>Publication Year</td>
+                    <td id="book1Year"></td>
+                    <td id="book2Year"></td>
+                </tr>
+                <tr>
+                    <td>Genres</td>
+                    <td id="book1Genres"></td>
+                    <td id="book2Genres"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const bookData = {
+            "Books": [
+                {
+                    "title": "The Great Gatsby",
+                    "author": "F. Scott Fitzgerald",
+                    "publicationYear": 1925,
+                    "genres": ["Fiction", "Classics"]
+                },
+                {
+                    "title": "To Kill a Mockingbird",
+                    "author": "Harper Lee",
+                    "publicationYear": 1960,
+                    "genres": ["Fiction", "Coming-of-Age"]
+                }
+            ]
+        };
+
+        // Set the book data into the respective table cells
+        document.getElementById("book1Title").textContent = bookData.Books[0].title;
+        document.getElementById("book2Title").textContent = bookData.Books[1].title;
+
+        document.getElementById("book1Author").textContent = bookData.Books[0].author;
+        document.getElementById("book2Author").textContent = bookData.Books[1].author;
+
+        document.getElementById("book1Year").textContent = bookData.Books[0].publicationYear;
+        document.getElementById("book2Year").textContent = bookData.Books[1].publicationYear;
+
+        document.getElementById("book1Genres").textContent = bookData.Books[0].genres.join(", ");
+        document.getElementById("book2Genres").textContent = bookData.Books[1].genres.join(", ");
+    </script>
+
+</body>
+</html>
